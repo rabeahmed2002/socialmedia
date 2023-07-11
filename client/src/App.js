@@ -19,13 +19,18 @@ import * as reactRouterDom from 'react-router-dom'
 import { AuthContext } from "./Context/authContext";
 import { useContext } from 'react'
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 
 function App() {
 
   const {currentUser}=useContext(AuthContext)
+  
+  const queryClient = new QueryClient();
 
   const Layout=()=>{
     return(
+      <QueryClientProvider client={queryClient}>
       <div>
         <NavBar/>
 
@@ -39,6 +44,7 @@ function App() {
         </div>
 
       </div>
+      </QueryClientProvider>
     )
   }
 
