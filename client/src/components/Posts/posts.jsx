@@ -1,5 +1,8 @@
 import Post from "../Post/Post";
 import "./posts.scss";
+import { useQuery } from "@tanstack/react-query";
+
+
 
 const Posts = () => {
   //TEMPORARY
