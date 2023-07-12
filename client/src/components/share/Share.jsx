@@ -41,6 +41,7 @@ const Share = () => {
     e.preventDefault();
     let imgUrl = "";
     if (file) imgUrl = await upload();
+    mutation.mutate({ desc});
     mutation.mutate({ desc, img: imgUrl });
     setDesc("");
     setFile(null);

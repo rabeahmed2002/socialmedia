@@ -88,7 +88,7 @@ const Post = ({ post }) => {
           <div className="item">
             {isLoading ? (
               "loading"
-            ) : data.includes(currentUser.id) ? (
+            ) : data && data.includes(currentUser.id) ? (
               <FavoriteOutlinedIcon
                 style={{ color: "red" }}
                 onClick={handleLike}
